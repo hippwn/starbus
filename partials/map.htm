@@ -1,0 +1,11 @@
+<div class="d-flex flex-row align-items-center page-head">
+	<a class="lead px-2" href="#!/">Starbus</a>
+	<span class="oi oi-chevron-right text-primary px-2" title="chevron right" aria-hidden="true"></span>
+	<a class="lead px-2" href="#!/map">{{ location }}</a>
+	<span class="oi oi-chevron-right text-primary px-2" title="chevron right" aria-hidden="true" ng-show="append"></span>
+	<span class="lead" ng-show="selectedStop">{{ selectedStop.nom }} ({{ mapInfos.numline }})</span>
+</div>
+<div class="map-head col-lg-8 offset-lg-2 pt-5">
+
+</div>
+<div id="map" class="col-lg-8 offset-lg-2"></div>

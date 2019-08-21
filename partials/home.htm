@@ -1,0 +1,38 @@
+<div class="d-flex flex-row align-items-center col-lg-12 page-head">
+	<a class="lead px-2" href="#!/">Starbus</a>
+	<span class="oi oi-chevron-right text-primary px-2" title="chevron right" aria-hidden="true"></span>
+	<a class="lead px-2" href="#!/">{{ location }}</a>
+
+</div>
+
+<div angucomplete-alt="" id="stops"
+	class="col-lg-8 offset-lg-2 p-5"
+	placeholder="Cherchez un arrêt..."
+	pause="400"
+	selected-object="postProcess"
+	remote-url="https://data.explore.star.fr/api/records/1.0/search/?apikey=fa4b313c01368e8a9344246ee78f47a628a66c62a385f5ba96e5d23d&dataset=tco-bus-topologie-pointsarret-td&lang=fr&timezone=Europe%2FParis&facet=nom&q="
+	remote-url-data-field="records"
+	remote-url-response-formatter="preProcess"
+	title-field="fields.nom"
+	description-field=""
+	input-class="form-control"
+	match-class="text-primary"></div>
+
+<ul class="list-group col-lg-8 offset-lg-2">
+    <li class="list-group-item list-group-item-action d-flex flex-column" ng-repeat="x in records" ng-click="toMap(x)">
+		<div class="d-flex flex-row w-100 justify-content-between li-item-head">
+			<img class="icon col-lg-1 px-1 pb-2" src="img/bus-facing-right.svg" alt="Bus icon">
+			<div class="col-lg-10 pb-2 d-flex align-items-center">
+				<span class="lead pr-3 text-primary">{{ x.numline }}</span>
+				<small class="pt-1">vers</small>
+				<span class="lead pl-3 text-primary">{{ x.dest }}</span>
+			</div>
+		</div>
+		<div class="d-flex flex-row justify-content-between">
+			<p class="mb-1"><span class="text-secondary">Passage : </span><span>{{ x.arrival.fromNow() }}</span></p>
+			<small class="timestamp"><span class="text-secondary">maj : </span>{{ x.timestamp.calendar() }}</small>
+		</div>
+	</li>
+</ul>
+
+<img id="logo" src="img/logo.png" alt="Logo" ng-show="! records">

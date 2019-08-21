@@ -1,0 +1,32 @@
+/* GENERAL
+	=================== */
+
+.container { min-height: 100vh; }
+a {	color: black; }
+a:hover { text-decoration: none; }
+.page-head { min-height: 5vh; }
+
+img#logo {
+	position: absolute;
+	height: 30vh;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* HOME
+	=================== */
+
+.li-item-head small { font-style: italic; }
+.li-item-head { min-height: 1.5em; }
+
+.timestamp {
+	font-size: .7em;
+ 	align-self: end;
+}
+
+/* MAP
+	=================== */
+
+div#map { height: 60vh; }
+.map-head { min-height: 10vh; }
