@@ -14,5 +14,5 @@ bower install
 
 Start any webserver in the directory to access the ressources. In python3:
 ```bash
-python -m http.server 8080
+python3 -m http.server 8080
 ```
